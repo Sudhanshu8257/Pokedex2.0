@@ -1,0 +1,23 @@
+.imgg {
+  width: 32px;
+  height: 32px;
+  margin-right: 3px;
+  margin-left: -0.5px;
+}
+.text {
+  font-family: Oswald;
+  color: white;
+  letter-spacing: 0.1em;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: middle;
+  font-size: 32px;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+}
+.li {
+  text-decoration: none;
+}

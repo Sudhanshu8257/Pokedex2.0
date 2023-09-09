@@ -1,0 +1,74 @@
+.favoritesContainer {
+    width: 100%;
+    max-height: 80vh;
+    height: 80vh;
+    margin-top: 30px;
+    background-color: #F5F5F5;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px ;
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+.favoritesCardContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap:32px;
+    justify-content: center;
+}
+.opsContaier {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 28px;
+    align-self: center;
+}
+
+.noFavsContainer {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 28px;
+    align-self: center;
+}
+
+.cardContainer {
+    width: 220px;
+    height: 270px;
+    background-color: #080808;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:#F5F5F5;
+    border-radius: 15px;
+    gap:10px;
+}
+.cardContainer:hover {
+    box-shadow: 0 0 20px 0 #000000;
+    transform: translate(0px, -5px);
+  }
+.pokeImage{
+    width: 150px;
+    height: 150px;
+}

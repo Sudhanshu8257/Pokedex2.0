@@ -1,0 +1,12 @@
+export { default as RootLayout } from "./RootLayout";
+export { default as SearchPage } from "./SearchPage";
+export { default as HomePage } from "./HomePage";
+export { default as ContactPage } from "./ContactPage";
+export { default as FavoritesPage } from "./FavoritesPage";
+export { default as AccountPage } from "./AccountPage";
+export { default as SignInPage } from "./SignInPage";
+export { default as SignUpPage } from "./SignUpPage";
+export { default as PageNotFound } from "./PageNotFound";
+export { default as TriviaPage } from "./TriviaPage";
+export { default as VerificationPage } from "./VerificationPage";
+export { default as AuthLayout } from "./AuthLayout";

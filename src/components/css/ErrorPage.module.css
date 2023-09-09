@@ -1,0 +1,29 @@
+.wrapper {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.PageNotFoundContainer {
+  width: 80vw;
+  height: 80vh;
+  border-radius: 250px 0px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: inter;
+  font-weight: 800;
+  font-size: 40px;
+  gap: 25px;
+  align-self: center;
+  margin: auto;
+  top: auto;
+}
+.subHeading {
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 3px;
+}
