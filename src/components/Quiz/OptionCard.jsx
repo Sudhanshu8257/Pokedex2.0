@@ -56,7 +56,9 @@ const OptionCard = (props) => {
       }}
       raised
       aria-disabled={props.submitted}
-      onClick={() => !props.submitted && props.updateQuestionNo(index, props.name)}
+      onClick={() =>
+        !props.submitted && props.updateQuestionNo(index, props.name)
+      }
     >
       <CardContent
         sx={{
@@ -70,10 +72,11 @@ const OptionCard = (props) => {
       >
         {imageError ? (
           <img
-            src="/images/logo.png"
+            src="/images/giphy.gif"
             alt="err"
             width={isMobile ? "85px" : "180px"}
             height={isMobile ? "85px" : "180px"}
+            style={{ borderRadius: "15px" }}
           />
         ) : (
           <img

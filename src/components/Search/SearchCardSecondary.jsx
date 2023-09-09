@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../css/Search.module.css";
 import { padInteger, capitalize } from "../../helpers/helperFunction";
 import { counterActions } from "../../store/counter-slice";
@@ -10,10 +10,29 @@ const SearchCardSecondary = (props) => {
   const handleClick = () => {
     dispatch(counterActions.setCounter(props?.data?.id));
   };
+  const [imageError, setImageError] = useState(false);
+  const handleImageError = () => {
+    setImageError(true);
+  };
   return (
     <Link to={"/"} style={{ textDecoration: "none" }}>
       <div className={classes.SearchCardSecondary} onClick={handleClick}>
-        <img alt="pokemon" src={source} className={classes.pokeImage}></img>
+        {imageError ? (
+          <img
+            src="/images/giphy.gif"
+            alt="Error: Image Not Available"
+            className={classes.pokeImage}
+            style={{ borderRadius: "15px" }}
+          />
+        ) : (
+          <img
+            alt="pokemon"
+            src={source}
+            className={classes.pokeImage}
+            onError={handleImageError}
+          />
+        )}
+
         <span>#{padInteger(props?.data?.id)}</span>
         <span>{capitalize(props?.data?.name)}</span>
       </div>

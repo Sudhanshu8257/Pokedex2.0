@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "../css/Home.module.css";
 import { useTheme, useMediaQuery } from "@mui/material";
 import StatsChartBar from "../../UI/StatsChartBar";
 import ReactCardFlip from "react-card-flip";
 
 const PokeImage = (props) => {
+  const [imageError, setImageError] = useState(false);
+  const handleImageError = () => {
+    setImageError(true);
+  };
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   let source = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props?.pokemon?.id}.png`;
@@ -24,12 +28,25 @@ const PokeImage = (props) => {
             width: "100%",
           }}
         >
-          <img
-            alt="pokemon"
-            src={source}
-            className={classes.image}
-            style={{ height: isMobile && "300px", width: isMobile && "auto" }}
-          ></img>
+          {imageError ? (
+            <>
+              <img
+                src="/images/giphy.gif"
+                alt="Error: Image Not Available"
+                width={isMobile ? "85px" : "80%"}
+                height={isMobile ? "85px" : "80%"}
+                style={{ borderRadius: "30px" }}
+              />
+            </>
+          ) : (
+            <img
+              alt="pokemon"
+              src={source}
+              className={classes.image}
+              style={{ height: isMobile && "300px", width: isMobile && "auto" }}
+              onError={handleImageError}
+            />
+          )}
         </div>
         <div
           style={{

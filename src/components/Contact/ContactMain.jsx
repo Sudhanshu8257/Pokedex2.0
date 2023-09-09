@@ -33,7 +33,7 @@ const ContactMain = () => {
   return (
     <div
       className={classes.contactMain}
-      style={{ fontSize: isMobile && "20px",marginTop:!isMobile&&"-20px" }}
+      style={{ fontSize: isMobile && "20px", marginTop: !isMobile && "-20px" }}
     >
       <span>
         Together We Can Do Great Things: Contact Us to Start Collaborating Today
