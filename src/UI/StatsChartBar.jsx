@@ -40,9 +40,8 @@ const StatsChartBar = (props) => {
         sx={{
           height: isMobile ? "189px" : "369px",
           width: "100%",
-          border: isMobile ? "2px solid #080808" : "3px solid #080808",
           borderRadius: "15px",
-          backgroundColor: "transparent",
+          backgroundColor: "rgba(238, 64, 55, 0.20);",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -54,7 +53,6 @@ const StatsChartBar = (props) => {
             height: barFillHeight,
             backgroundColor: "#EE4037",
             width: "100%",
-            borderRadius: "10px",
             transition: "all 0.5s ease-out",
           }}
         ></Box>
