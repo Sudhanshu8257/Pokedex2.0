@@ -5,3 +5,4 @@ export { default as HomeMain } from "./HomeMain";
 export { default as HomePagination } from "./HomePagination";
 export { default as PokeImage } from "./PokeImage";
 export { default as PokeInfo } from "./PokeInfo";
+export { default as EvolutionDialog } from "./EvolutionDialog";

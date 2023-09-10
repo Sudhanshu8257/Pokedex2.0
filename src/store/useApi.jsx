@@ -33,6 +33,13 @@ export const pokemonApi = createApi({
         return data;
       },
     }),
+    getEvolutionChainByUrl: builder.query({
+      query: (url) => url, // The URL is the parameter
+      transformResponse: (response) => {
+        // Transform the response to provide only the evolution chain data
+        return response.chain;
+      },
+    }),
   }),
 });
 
@@ -41,4 +48,5 @@ export const {
   useGetPokemonsQuery,
   useGetPokemonByNameSearchQuery,
   useGetPokemonsByTypeQuery,
+  useGetEvolutionChainByUrlQuery,
 } = pokemonApi;

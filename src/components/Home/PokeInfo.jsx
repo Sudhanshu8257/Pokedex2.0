@@ -18,6 +18,7 @@ import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import VisibilityOffRoundedIcon from "@mui/icons-material/VisibilityOffRounded";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorderRounded";
 import Favorite from "@mui/icons-material/FavoriteRounded";
+import EvolutionDialog from "./EvolutionDialog";
 
 const PokeInfo = (props) => {
   const theme = useTheme();
@@ -26,11 +27,19 @@ const PokeInfo = (props) => {
   const id = padInteger(props?.pokemon?.id);
   const [user] = useAuthState(auth);
   const counter = useSelector((state) => state.counter);
+  const evolutionLink = props?.pokemon_description?.evolution_chain?.url;
   const [InFavorites, setInFavorites] = useState(false);
   const [favoriteList, setFavoriteList] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const favID = doc(db, "users", `${user?.email}`);
+  const [isopen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
@@ -133,18 +142,14 @@ const PokeInfo = (props) => {
       >
         {capitalize(text)}
       </div>
-      <div
-        className={classes.PokeTypesContainer}
-        style={{
-          justifyContent: props?.pokemon?.types[1] ? "space-between" : "center",
-        }}
-      >
+      <div className={classes.PokeTypesContainer}>
         <div
           className={classes.PokeType}
           onClick={() => setTypes(props.pokemon?.types[0]?.type?.name)}
           style={{
             fontSize: isMobile && "18px",
             backgroundColor: types(props.pokemon?.types[0]?.type?.name),
+            width: isMobile && "130px",
           }}
         >
           {capitalize(props.pokemon?.types[0]?.type?.name)}
@@ -156,11 +161,28 @@ const PokeInfo = (props) => {
             style={{
               fontSize: isMobile && "18px",
               backgroundColor: types(props.pokemon?.types[1]?.type?.name),
+              width: isMobile && "130px",
             }}
           >
             {capitalize(props.pokemon?.types[1]?.type?.name)}
           </div>
         )}
+        <div
+          className={classes.PokeType}
+          style={{
+            fontSize: isMobile && "18px",
+            backgroundColor: "#EE4037",
+            width: isMobile && "130px",
+          }}
+          onClick={handleOpen}
+        >
+          Evolution
+        </div>
+        <EvolutionDialog
+          isOpen={isopen}
+          handleClose={handleClose}
+          link={evolutionLink}
+        />
       </div>
       <div
         className={classes.PokeStats}

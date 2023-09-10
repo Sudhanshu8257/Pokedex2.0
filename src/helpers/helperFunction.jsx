@@ -82,3 +82,8 @@ export const types = (value) => {
   }
   return color;
 };
+export function extractIdFromUrl(url) {
+  const segments = url.split("/");
+  const id = segments[segments.length - 2];
+  return id;
+}
