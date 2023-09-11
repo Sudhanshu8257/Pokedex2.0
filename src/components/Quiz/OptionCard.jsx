@@ -6,6 +6,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { capitalize } from "../../helpers/helperFunction";
 
 const OptionCard = (props) => {
@@ -71,7 +72,8 @@ const OptionCard = (props) => {
         }}
       >
         {imageError ? (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src="/images/giphy.gif"
             alt="err"
             width={isMobile ? "85px" : "180px"}
@@ -79,7 +81,8 @@ const OptionCard = (props) => {
             style={{ borderRadius: "15px" }}
           />
         ) : (
-          <img
+          <LazyLoadImage
+            effect="blur"
             alt="pokemon"
             src={props.source}
             width={isMobile ? "85px" : "100%"}

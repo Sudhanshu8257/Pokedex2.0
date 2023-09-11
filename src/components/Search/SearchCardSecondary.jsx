@@ -4,6 +4,7 @@ import { padInteger, capitalize } from "../../helpers/helperFunction";
 import { counterActions } from "../../store/counter-slice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const SearchCardSecondary = (props) => {
   let source = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props?.data?.id}.png`;
   const dispatch = useDispatch();
@@ -18,14 +19,16 @@ const SearchCardSecondary = (props) => {
     <Link to={"/"} style={{ textDecoration: "none" }}>
       <div className={classes.SearchCardSecondary} onClick={handleClick}>
         {imageError ? (
-          <img
+          <LazyLoadImage
+            effect="blur"
             src="/images/giphy.gif"
             alt="Error: Image Not Available"
             className={classes.pokeImage}
             style={{ borderRadius: "15px" }}
           />
         ) : (
-          <img
+          <LazyLoadImage
+            effect="blur"
             alt="pokemon"
             src={source}
             className={classes.pokeImage}

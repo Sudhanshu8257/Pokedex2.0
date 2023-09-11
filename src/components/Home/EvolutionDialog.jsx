@@ -55,7 +55,7 @@ const EvolutionDialog = ({ isOpen, handleClose, link }) => {
       >
         Evolution Chart
       </DialogTitle>
-      <DialogContent sx={{ overflowY: "scroll" }}>
+      <DialogContent>
         <div
           style={{
             display: "flex",

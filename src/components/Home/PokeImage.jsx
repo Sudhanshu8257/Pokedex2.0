@@ -3,6 +3,7 @@ import classes from "../css/Home.module.css";
 import { useTheme, useMediaQuery } from "@mui/material";
 import StatsChartBar from "../../UI/StatsChartBar";
 import ReactCardFlip from "react-card-flip";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const PokeImage = (props) => {
   const [imageError, setImageError] = useState(false);
@@ -30,7 +31,8 @@ const PokeImage = (props) => {
         >
           {imageError ? (
             <>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 src="/images/giphy.gif"
                 alt="Error: Image Not Available"
                 width={isMobile ? "85px" : "80%"}
@@ -39,7 +41,8 @@ const PokeImage = (props) => {
               />
             </>
           ) : (
-            <img
+            <LazyLoadImage
+              effect="blur"
               alt="pokemon"
               src={source}
               className={classes.image}

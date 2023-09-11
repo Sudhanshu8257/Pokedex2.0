@@ -7,6 +7,7 @@ import {
   padInteger,
   capitalize,
 } from "../../helpers/helperFunction";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const RenderPokemonData = ({ pokemonData, handleClick }) => {
   return (
     <Link to={"/search"} style={{ textDecoration: "none" }}>
@@ -22,7 +23,8 @@ const RenderPokemonData = ({ pokemonData, handleClick }) => {
         key={extractIdFromUrl(pokemonData?.species?.url)}
         onClick={() => handleClick(pokemonData?.species?.name)}
       >
-        <img
+        <LazyLoadImage
+          effect="blur"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${extractIdFromUrl(
             pokemonData?.species?.url
           )}.png`}
