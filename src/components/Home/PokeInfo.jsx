@@ -149,7 +149,7 @@ const PokeInfo = (props) => {
           style={{
             fontSize: isMobile && "18px",
             backgroundColor: types(props.pokemon?.types[0]?.type?.name),
-            width: isMobile && "130px",
+            width: isMobile && "110px",
           }}
         >
           {capitalize(props.pokemon?.types[0]?.type?.name)}
@@ -161,7 +161,7 @@ const PokeInfo = (props) => {
             style={{
               fontSize: isMobile && "18px",
               backgroundColor: types(props.pokemon?.types[1]?.type?.name),
-              width: isMobile && "130px",
+              width: isMobile && "110px",
             }}
           >
             {capitalize(props.pokemon?.types[1]?.type?.name)}
@@ -172,7 +172,7 @@ const PokeInfo = (props) => {
           style={{
             fontSize: isMobile && "18px",
             backgroundColor: "#EE4037",
-            width: isMobile && "130px",
+            width: isMobile && "110px",
           }}
           onClick={handleOpen}
         >
