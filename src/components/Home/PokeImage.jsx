@@ -4,10 +4,12 @@ import { useTheme, useMediaQuery } from "@mui/material";
 import StatsChartBar from "../../UI/StatsChartBar";
 import ReactCardFlip from "react-card-flip";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { toast } from "react-toastify";
 
 const PokeImage = (props) => {
   const [imageError, setImageError] = useState(false);
   const handleImageError = () => {
+    toast.info("Image lost in the tall grass! Activate VPN for a quicker catch!");
     setImageError(true);
   };
   const theme = useTheme();
