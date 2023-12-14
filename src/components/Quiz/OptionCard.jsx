@@ -31,6 +31,12 @@ const OptionCard = (props) => {
   const handleImageError = () => {
     setImageError(true);
   };
+  function padNumber(number) {
+    const paddedNumber = String(number).padStart(3, "0");
+    return paddedNumber;
+  }
+  let newId = padNumber(props?.mainId);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
 
   return (
     <Card
@@ -84,7 +90,7 @@ const OptionCard = (props) => {
           <LazyLoadImage
             effect="blur"
             alt="pokemon"
-            src={props.source}
+            src={source}
             width={isMobile ? "85px" : "100%"}
             height={isMobile ? "85px" : ""}
             onError={handleImageError}
