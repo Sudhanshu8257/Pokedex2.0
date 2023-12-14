@@ -9,6 +9,13 @@ import {
 } from "../../helpers/helperFunction";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const RenderPokemonData = ({ pokemonData, handleClick }) => {
+  let id = extractIdFromUrl(pokemonData?.species?.url);
+  function padString(str) {
+    const paddedString = str.padStart(3, "0");
+    return paddedString;
+  }
+  let newId = padString(id);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
   return (
     <Link to={"/search"} style={{ textDecoration: "none" }}>
       <div
@@ -20,19 +27,17 @@ const RenderPokemonData = ({ pokemonData, handleClick }) => {
           fontWeight: "bold",
           color: "black",
         }}
-        key={extractIdFromUrl(pokemonData?.species?.url)}
+        key={id}
         onClick={() => handleClick(pokemonData?.species?.name)}
       >
         <LazyLoadImage
           effect="blur"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${extractIdFromUrl(
-            pokemonData?.species?.url
-          )}.png`}
+          src={source}
           width={"150px"}
           alt="pokemon"
           height={"150px"}
         />
-        <h4>#{padInteger(extractIdFromUrl(pokemonData?.species?.url))}</h4>
+        <h4>#{padInteger(id)}</h4>
         <h3>{capitalize(pokemonData?.species?.name)}</h3>
       </div>
     </Link>
