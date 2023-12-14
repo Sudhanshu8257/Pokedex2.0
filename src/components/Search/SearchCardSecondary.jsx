@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 const SearchCardSecondary = (props) => {
-  let source = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props?.data?.id}.png`;
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(counterActions.setCounter(props?.data?.id));
@@ -15,6 +14,12 @@ const SearchCardSecondary = (props) => {
   const handleImageError = () => {
     setImageError(true);
   };
+  function padNumber(number) {
+    const paddedNumber = String(number).padStart(3, "0");
+    return paddedNumber;
+  }
+  let newId = padNumber(props?.data?.id);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
   return (
     <Link to={"/"} style={{ textDecoration: "none" }}>
       <div className={classes.SearchCardSecondary} onClick={handleClick}>
