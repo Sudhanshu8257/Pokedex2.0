@@ -14,8 +14,13 @@ const PokeImage = (props) => {
   };
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-  let source = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props?.pokemon?.id}.png`;
-
+  // let source = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props?.pokemon?.id}.png`;
+   function padNumber(number) {
+    const paddedNumber = String(number).padStart(3, "0");
+    return paddedNumber;
+  }
+  let newId = padNumber(props?.pokemon?.id);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
   return (
     <div
       className={classes.pokeImageContainer}
