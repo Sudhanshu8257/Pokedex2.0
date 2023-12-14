@@ -117,10 +117,11 @@ const Main = (props) => {
                 return (
                   <OptionCard
                     key={i}
-                    source={ele.image}
-                    name={ele.name}
+                    source={ele?.image}
+                    name={ele?.name}
                     updateQuestionNo={handleAnswerClick}
                     selected={selected}
+                    mainId={ele?.id}
                     id={i}
                     isAnswered={isAnswered}
                     error={error}
