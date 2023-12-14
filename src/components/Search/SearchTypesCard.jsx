@@ -14,6 +14,12 @@ const SearchTypesCard = (props) => {
   const handleImageError = () => {
     setImageError(true);
   };
+  function padString(str) {
+    const paddedString = str.padStart(3, "0");
+    return paddedString;
+  }
+  let newId = padString(props?.id);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
   return (
     <div
       className={classes.SearchTypesCardContainer}
@@ -32,7 +38,7 @@ const SearchTypesCard = (props) => {
         <LazyLoadImage
           effect="blur"
           alt="pokemon"
-          src={props?.imgsrc}
+          src={source}
           className={classes.pokeeeImage}
           onError={handleImageError}
         />
