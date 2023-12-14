@@ -14,6 +14,12 @@ const PokemonCard = (props) => {
   const handleImageError = () => {
     setImageError(true);
   };
+  function padNumber(number) {
+    const paddedNumber = String(number).padStart(3, "0");
+    return paddedNumber;
+  }
+  let newId = padNumber(props?.id);
+  let source = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${newId}.png`;
   return (
     <Link to="/" style={{ textDecoration: "none" }}>
       <div className={classes.cardContainer} onClick={handleClick}>
@@ -29,7 +35,7 @@ const PokemonCard = (props) => {
           <LazyLoadImage
             effect="blur"
             alt="pokemon"
-            src={props?.imgsrc}
+            src={source}
             className={classes.pokeImage}
             onError={handleImageError}
           />
