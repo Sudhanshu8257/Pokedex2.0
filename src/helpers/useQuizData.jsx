@@ -49,18 +49,25 @@ const useQuizData = (score) => {
       randomIds[3] // check if randomIds[3] exists
     ) {
       const quizOptions = [
-        { name: data?.name, image: data?.sprites?.other?.home?.front_default },
+        {
+          name: data?.name,
+          image: data?.sprites?.other?.home?.front_default,
+          id: data?.id,
+        },
         {
           name: pokemon1?.data.name,
           image: pokemon1?.data.sprites?.other?.home?.front_default,
+          id: pokemon1?.data?.id,
         },
         {
           name: pokemon2?.data.name,
           image: pokemon2?.data.sprites?.other?.home?.front_default,
+          id: pokemon2?.data?.id,
         },
         {
           name: pokemon3?.data.name,
           image: pokemon3?.data.sprites?.other?.home?.front_default,
+          id: pokemon3?.data?.id,
         },
       ];
       setQuizOptions(shuffleArray(quizOptions));
