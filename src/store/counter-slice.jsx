@@ -6,13 +6,13 @@ const counterSlice = createSlice({
   reducers: {
     decrement(state) {
       if (state.counter === 1) {
-        state.counter = 1010;
+        state.counter = 1025;
       } else {
         state.counter--;
       }
     },
     increment(state) {
-      if (state.counter === 1010) {
+      if (state.counter === 1025) {
         state.counter = 1;
       } else {
         state.counter++;
