@@ -20,7 +20,7 @@ const useQuizData = (score) => {
     const generateRandomIds = () => {
       const ids = [];
       while (ids.length < 4) {
-        const id = Math.floor(Math.random() * 250) + 1;
+        const id = Math.floor(Math.random() * 550) + 1;
         if (!ids.includes(id)) {
           ids.push(id);
         }
