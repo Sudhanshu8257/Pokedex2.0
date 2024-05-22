@@ -33,7 +33,7 @@ export default function UsePagination() {
   };
 
   const { items } = usePagination({
-    count: 1010,
+    count: 1025,
     page: counter,
     onChange: (event, page) => handleChangePage(page),
     siblingCount: isMobile ? 0 : 1,
