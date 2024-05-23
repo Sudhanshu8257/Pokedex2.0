@@ -15,7 +15,7 @@ const TypesResult = (props) => {
     alignItems: "center",
     justifyContent: "center",
   };
-  const pokemonList = props?.data?.filter((pokemon) => pokemon?.id <= 1010);
+  const pokemonList = props?.data?.filter((pokemon) => pokemon?.id <= 1025);
 
   return (
     <Box
